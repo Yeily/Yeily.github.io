@@ -1,28 +1,20 @@
 /* **************************
-Company: Ingelectra Constructora, S.A.
-Autor: Yeily Calderón Marín
+Autor: Yeily Calderón M.
 Mail: yeilycalderon@yahoo.es
+Country: Costa Rica
 ************************** */
 
 var g_ruta = window.URL_APP;
-var user = window.USUARIO;
-var exp = window.EXP;
-var tkjs = window.TK;
 
 document.oncontextmenu = function() {
    return false;
 };
 
-document.onmousedown = function(e) {
+document.onmousedown = function(ctl) {
    var msg = "Si desea contenido de este sitio, por favor ponganse en contacto con su desarrollador.";
    
-   if (navigator.appName == 'Netscape' && e.button == 2) {
-      alert(msg); //- Si no quieres asustar a tu usuario entonces quita esta linea...
-      return false;
-   }
-   else if (navigator.appName == 'Microsoft Internet Explorer' && e.button == 2) {
-      alert(msg); //- Si no quieres asustar al usuario que utiliza IE,  entonces quita esta linea...
-                     //- Aunque realmente se lo merezca...
+   if (ctl.button == 2) {
+      alert(msg);
       return false;
    }
    
@@ -31,38 +23,13 @@ document.onmousedown = function(e) {
 
 function deshabilitar_control(control)
 {
-    //new Promise((resolve, reject) => {
-        $(document).ready(function() {
-            $.blockUI({ 
-                message: '',
-                //message: '<h1>Cargando pagina...</h1>', 
-                //timeout: 5000 
-                onUnLoad: $.unblockUI()
-            });
-        });
-        
-        //resolve();
-    //});
+  $(document).ready(function() {
+    $.blockUI({ 
+	message: '',
+	onUnLoad: $.unblockUI()
+    });
+  });
 };
-
-function filtrarGrilla(idGrilla, col, texto)
-{
-	let tb = document.getElementById(idGrilla);
-       
-    Array.from(tb.rows).forEach((row) => {
-        var showRow = false;
-        
-        row.style.display = 'none';
-        if(row.children[col].textContent.toLowerCase().indexOf(texto.toLowerCase().trim()) > -1){
-            showRow = true;
-        }
-        
-        if(showRow){
-            row.style.display = null;
-        }
-    })
-}
-
 
 ////////////////////////////////////////////////////////////////////
 
