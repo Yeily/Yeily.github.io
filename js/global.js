@@ -4,7 +4,7 @@ Mail: yeilycalderon@yahoo.es
 Country: Costa Rica
 ************************** */
 
-var g_ruta = window.URL_APP;
+var g_dirRelativa = window.DIR_RELATIVA;
 
 document.oncontextmenu = function() {
    return false;
