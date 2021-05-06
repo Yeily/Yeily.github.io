@@ -11,11 +11,6 @@ Country: Costa Rica
     margin: 0px;
 }
 
-/* @font-face {
-    font-family: 'DIN';
-    src: url("fuente-ig.ttf");
-} */
-
 /*#region Etiquetas HTML */
 
 body {
@@ -30,121 +25,15 @@ body {
 header {
     display: block;
     width: 100%;
-    /*background-color: #0d553e;*/
     background-color: #e6e5e6;
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #0d553e;
 }
 
-table{
-    /*table-layout: fixed;*/
-    width: auto;
-    border-radius: 5px;
-    border-collapse: collapse;
-}
-
-th, td {
-    border-bottom: 1px solid #f59d40;
-    padding: 5px;
-    overflow-wrap: break-word;
-}
-
-th {
-    background: linear-gradient(to top,#0d553e , #fff);
-    color: #0d553e;
-}
-
-tbody tr:nth-child(even)
-{
-  background: #e6e5e6;
-}
-
-input[type=checkbox]
-{
-  /* Double-sized Checkboxes */
-  -ms-transform: scale(3); /* IE */
-  -moz-transform: scale(3); /* FF */
-  -webkit-transform: scale(3); /* Safari and Chrome */
-  -o-transform: scale(3); /* Opera */
-  transform: scale(2);
-  padding: 10px;
-}
-
 /*#endregion Etiquetas HTML */
 
 /*#region Ids */
-
-/* #region mnuLateral */
-#mnuLateral {
-    position: fixed;
-    width: 200px;
-    left: -150px;
-    margin: 10px auto;
-    text-align: end;
-    background: #0d553e;
-    transition: all 0.5s;
-    padding: 0 5px;
-    font-weight: 600;
-}
-#mnuLateral:hover {
-    left: 0;
-    transition: all 0.5s;
-}
-#mnuLateral ul, li {
-    list-style: none;
-    margin: 0;
-    padding: 0; 
-}
-#mnuLateral ul li:hover { 
-    position: relative; 
-    z-index: 600;
-}
-#mnuLateral ul ul{
-    visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    z-index: 600;
-}
-#mnuLateral ul li:hover > ul {
-    visibility: visible; 
-}
-#mnuLateral li:hover, 
-#mnuLateral li.active,
-#mnuLateral ul ul li:hover { 
-    background: (255, 255, 255, 0.3); 
-}
-
-#mnuLateral ul ul li {
-    background: #0d553e;
-}
-
-#mnuLateral img {
-    padding-left: 10px;
-}
-
-#mnuLateral ul li {
-    display: block;
-    float: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-#mnuLateral a {
-    display: block;
-    color: #f59d40;
-    padding: 10px;
-    text-decoration: none;
-    /*line-height: 160%;
-    width: 164px;*/
-}
-
-#mnuLateral ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
-
-/* endregion mnuLateral */
-
 #chk-fav {
     display: none;
 }
@@ -157,8 +46,6 @@ input[type=checkbox]
     padding: 10px;
     background-color: #0d553e;
 }
-
-
 /*#endregion Ids */
 
 /*#region Verdaderas Clases */
@@ -185,19 +72,19 @@ input[type=checkbox]
 }
 
 .sep-S {
-    margin: 2px;
-}
-
-.sep-M {
     margin: 5px;
 }
 
-.sep-L {
+.sep-M {
     margin: 10px;
 }
 
-.sep-R-XL {
-    margin-right: 100px;
+.sep-L {
+    margin: 30px;
+}
+
+.sep-XL {
+    margin: 50px;
 }
 
 .ancho-corto {
@@ -230,10 +117,6 @@ input[type=checkbox]
     transition:border-color ease-in-out .30s,box-shadow ease-in-out .30s
 }
 
-.encabezado {
-    color: orange;
-}
-
 /*#region Efectos */
 
 .iluminado:focus,
@@ -258,15 +141,14 @@ input[type=checkbox]
 /*#region Clases */
 
 /*#region Contenedores */
-.inicio {
-    background-color: #e6e5e6;
-    color: #f59d40;
-    text-align: center;
-    font-size: xx-large;
-    padding: 10px;
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1em;
+    margin: 10px 10px 10px 60px;
+    min-height: 400px;
 }
 
-.login,
 .mensaje {
     background-color: #fff;
     color: #0d553e;
@@ -276,28 +158,10 @@ input[type=checkbox]
     text-align: center;
 }
 
-.login {
-    text-align: end;
-}
-
 .cuerpo {
-    /* display: flex;
-    flex-direction: column; */
-    
     align-items: center;
     padding: 60px;
-
 }
-
-.cuerpo table {
-    display: inline-block;
-    margin: 1em;
-}
-
-/* .bloque {
-    display: block;
-} */
-
 /*#endregion Contenedores*/
 
 
@@ -340,92 +204,13 @@ input[type=checkbox]
     border-radius: 15px;
 }
 
-.nav-fav {
-    display: none;
-    position: absolute;
-    left: 300px;
-    background: #0d553e;
-    font-weight: bold;
-    /*transition: all 0.5s;*/
-}
-
-.nav-fav ul li a {
-    display: block;
-    color: #f59d40;
-    padding: 10px;
-    text-decoration: none;
-    line-height: 160%;
-    width: 164px;
-}
-
-.nav-fav ul li a:hover {
-    background-color: rgba(150, 250, 150, 0.3);
-}
-
-.nav-fav ul,
-.nav-sesion ul {
-    overflow: hidden;
-    list-style: none;
-}
-
-.nav-sesion ul li a {
-    position: absolute;
-    /*left: 90%;*/
-    top: 50px;
-    background-color: #f59d40;
-    padding: 10px;
-    text-decoration: none;
-    font-size: medium;
-    border-radius: 5px;
-
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);
-    color: #0d553e;
-}
-
-.contenedor {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 1em;
-    margin: 10px 10px 10px 60px;
-    min-height: 400px;
-}
-
-.novedad {
-    background: #e6e5e6;
-    border: 1px solid rgba(0,0,0,0.3);
-    justify-self: center;
-    align-self: center;
-}
-
-.novedad > .titulo {
-    background: linear-gradient(to top,#0d553e , #fff);
-    height: 30px;
-    text-align: center;
-}
-
-.novedad .nov-nota {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-}
-
-.novedad .nov-pie {
-    background: linear-gradient(to top,#f59d40, #fff);
-    padding: 20px;
-}
-
 .imagen img {
     width: 200px;
 }
 
 .pie {
     display: block;
-    /*background: #0d553e;*/
     background-color: #e6e5e6;
-    /*background: linear-gradient(to bottom, #0d553e, #555255);*/
-    /*color: #f59d40;*/
     color: #0d553e;
     padding: 20px;
     font-size: 10px;
