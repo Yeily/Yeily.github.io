@@ -3,7 +3,9 @@ Autor: Yeily Calderón M.
 Mail: yeilycalderon@yahoo.es
 Country: Costa Rica
 ************************** */
+'use strict';
 
+alert("hola");
 var g_dirRelativa = window.DIR_RELATIVA;
 
 document.oncontextmenu = function() {
